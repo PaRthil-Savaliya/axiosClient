@@ -4,7 +4,8 @@ interface AxiosClientOptions {
   baseURL: string;
   whitelistUrls?: string[];
   blacklistUrls?: string[];
-  token?: string;
+  tokenType: string;
+  token: string;
 }
 
 export const createCustomAxiosClient = (options: AxiosClientOptions) => {
@@ -12,14 +13,14 @@ export const createCustomAxiosClient = (options: AxiosClientOptions) => {
     baseURL: options.baseURL,
   });
 
-  const { whitelistUrls = [], blacklistUrls = [], token } = options;
+  const { whitelistUrls = [], blacklistUrls = [], token, tokenType } = options;
 
   axiosClient.interceptors.request.use(async (config: AxiosRequestConfig) => {
     try {
       if (token && !blacklistUrls.includes(config.url || "")) {
         config.headers = {
           ...config.headers,
-          Authorization: `Bearer ${token}`,
+          Authorization: `${tokenType ?? "Bearer"} ${token}`,
         } as AxiosRequestHeaders;
       }
 

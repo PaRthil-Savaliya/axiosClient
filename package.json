@@ -1,0 +1,28 @@
+{
+  "name": "axios-client-helper",
+  "version": "1.0.0",
+  "description": "This package provides a custom Axios client designed to simplify HTTP requests within your React Native application. It comes with built-in request interceptors to handle common scenarios such as adding authentication tokens, setting headers for JSON or FormData requests, and managing URL whitelists and blacklists.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaRthil-Savaliya/axiosClient.git"
+  },
+  "keywords": [
+    "axiosclient",
+    "axios",
+    "react-native",
+    "http",
+    "request",
+    "interceptor"
+  ],
+  "author": "Parthil-Savaliya",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "0.27.2",
+    "react": "^17.0.2",
+    "react-native": "^0.65.1"
+  }
+}
